@@ -1,0 +1,58 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: rpi-infra
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  secretRef:
+    name: rpi-infra
+  timeout: 20s
+  url: ssh://git@github.com/sthlmio/rpi-infra
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: rpi-apps
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  secretRef:
+    name: rpi-apps
+  timeout: 20s
+  url: ssh://git@github.com/sthlmio/rpi-apps
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: rpi-infra
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: rpi-infra
+  validation: client
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: rpi-apps
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  dependsOn:
+    - name: rpi-infra
+  path: ./
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: rpi-apps
+  validation: client
