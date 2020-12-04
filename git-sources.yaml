@@ -11,7 +11,7 @@ spec:
   secretRef:
     name: rpi-infra
   timeout: 20s
-  url: ssh://git@github.com/sthlmio/rpi-infra.git
+  url: ssh://git@github.com/sthlmio/rpi-infra
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
@@ -25,4 +25,4 @@ spec:
   secretRef:
     name: rpi-apps
   timeout: 20s
-  url: ssh://git@github.com/sthlmio/rpi-apps.git
+  url: ssh://git@github.com/sthlmio/rpi-apps
