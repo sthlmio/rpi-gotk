@@ -33,7 +33,7 @@ metadata:
   name: rpi-infra
   namespace: flux-system
 spec:
-  interval: 60m0s
+  interval: 1h
   path: ./
   prune: true
   sourceRef:
@@ -47,7 +47,7 @@ metadata:
   name: rpi-apps
   namespace: flux-system
 spec:
-  interval: 60m0s
+  interval: 6h
   dependsOn:
     - name: rpi-infra
   path: ./
