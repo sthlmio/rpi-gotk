@@ -67,6 +67,7 @@ spec:
   checkout:
     gitRepositoryRef:
       name: rpi-apps
+      branch: main
   update:
     setters: {}
   commit:
