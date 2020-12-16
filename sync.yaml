@@ -65,9 +65,9 @@ metadata:
 spec:
   interval: 5m
   checkout:
+    branch: main
     gitRepositoryRef:
       name: rpi-apps
-      branch: main
   update:
     setters: {}
   commit:
