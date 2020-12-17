@@ -1,7 +1,5 @@
 # Flux V2
 
-Current version: `0.5.3`
-
 ## Bootstrap (idempotent)
 
 ```bash
