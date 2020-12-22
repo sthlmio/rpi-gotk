@@ -68,8 +68,6 @@ spec:
     branch: main
     gitRepositoryRef:
       name: rpi-apps
-  update:
-    setters: {}
   commit:
     authorName: UpdateBot
     authorEmail: bot@sthlm.io
