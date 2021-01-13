@@ -71,5 +71,26 @@ spec:
   update:
     setters: {}
   commit:
-    authorName: UpdateBot
-    authorEmail: bot@sthlm.io
+    authorName: fluxcdbot
+    authorEmail: fluxcdbot@users.noreply.github.com
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: sthlmio-web
+  namespace: flux-system
+spec:
+  interval: 5m
+  image: sthlmio/web
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: sthlmio-web
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: sthlmio-web
+  policy:
+    semver:
+      range: 1.0.x
