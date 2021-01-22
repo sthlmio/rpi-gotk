@@ -10,3 +10,12 @@ flux bootstrap github \
   --path=/ \
   --components-extra=image-reflector-controller,image-automation-controller
 ```
+
+## Monitoring
+
+http://localhost:3000/d/gitops-toolkit-control-plane
+http://localhost:3000/d/gitops-toolkit-cluster
+
+```bash
+kubectl -n flux-system port-forward svc/grafana 3000:3000
+```
