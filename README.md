@@ -14,6 +14,7 @@ flux bootstrap github \
 ## Monitoring
 
 http://localhost:3000/d/gitops-toolkit-control-plane
+
 http://localhost:3000/d/gitops-toolkit-cluster
 
 ```bash
