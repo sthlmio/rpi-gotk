@@ -101,7 +101,7 @@ spec:
     gitRepositoryRef:
       name: rpi-apps
   update:
-    setters: {}
+    strategy: {}
   commit:
     authorName: fluxcdbot
     authorEmail: fluxcdbot@users.noreply.github.com
