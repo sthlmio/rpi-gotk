@@ -107,6 +107,23 @@ spec:
     authorEmail: fluxcdbot@users.noreply.github.com
 ---
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageUpdateAutomation
+metadata:
+  name: infra-update
+  namespace: flux-system
+spec:
+  interval: 5m
+  checkout:
+    branch: main
+    gitRepositoryRef:
+      name: rpi-infra
+  update:
+    strategy: Setters
+  commit:
+    authorName: fluxcdbot
+    authorEmail: fluxcdbot@users.noreply.github.com
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImageRepository
 metadata:
   name: sthlmio-web
@@ -144,6 +161,27 @@ metadata:
 spec:
   imageRepositoryRef:
     name: sthlmio-faas-web-mail
+  policy:
+    semver:
+      range: 1.0.x
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: sthlmio-go-gs-backup
+  namespace: flux-system
+spec:
+  interval: 5m
+  image: sthlmio/go-gs-backup
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: sthlmio-go-gs-backup
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: sthlmio-go-gs-backup
   policy:
     semver:
       range: 1.0.x
