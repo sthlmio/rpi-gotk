@@ -17,9 +17,7 @@ flux bootstrap github \
 
 ## Monitoring
 
-http://localhost:3000/d/gitops-toolkit-control-plane
-
-http://localhost:3000/d/gitops-toolkit-cluster
+http://127.0.0.1:3000/
 
 ```bash
 kubectl -n flux-system port-forward svc/grafana 3000:3000
