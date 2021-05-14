@@ -1,8 +1,12 @@
-# Flux V2
+# rpi-gotk
+
+GitOps repo for Flux v2 running on our Raspberry Pi Kubernetes cluster.
 
 ## Bootstrap/upgrade (idempotent)
 
 ```bash
+brew upgrade fluxcd/tap/flux
+
 flux bootstrap github \
   --owner=sthlmio \
   --repository=rpi-gotk \
