@@ -89,39 +89,47 @@ spec:
     name: rpi-apps
   validation: client
 ---
-apiVersion: image.toolkit.fluxcd.io/v1alpha1
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
 kind: ImageUpdateAutomation
 metadata:
   name: web-update
   namespace: flux-system
 spec:
   interval: 5m
-  checkout:
-    branch: main
-    gitRepositoryRef:
-      name: rpi-apps
   update:
     strategy: Setters
-  commit:
-    authorName: fluxcdbot
-    authorEmail: fluxcdbot@users.noreply.github.com
+  sourceRef:
+    kind: GitRepository
+    name: rpi-apps
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        name: fluxcdbot
+        email: fluxcdbot@users.noreply.github.com
 ---
-apiVersion: image.toolkit.fluxcd.io/v1alpha1
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
 kind: ImageUpdateAutomation
 metadata:
   name: infra-update
   namespace: flux-system
 spec:
   interval: 5m
-  checkout:
-    branch: main
-    gitRepositoryRef:
-      name: rpi-infra
   update:
     strategy: Setters
-  commit:
-    authorName: fluxcdbot
-    authorEmail: fluxcdbot@users.noreply.github.com
+  sourceRef:
+    kind: GitRepository
+    name: rpi-infra
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        name: fluxcdbot
+        email: fluxcdbot@users.noreply.github.com
 ---
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImageRepository
