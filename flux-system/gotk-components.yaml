@@ -4895,7 +4895,7 @@ spec:
       - args:
         - --events-addr=http://notification-controller/
         - --watch-all-namespaces=true
-        - --log-level=debug
+        - --log-level=info
         - --log-encoding=json
         - --enable-leader-election
         - --storage-path=/data
@@ -4926,7 +4926,7 @@ spec:
         resources:
           limits:
             cpu: 1000m
-            #memory: 1Gi
+            memory: 1Gi
           requests:
             cpu: 50m
             memory: 64Mi
