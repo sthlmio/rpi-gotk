@@ -10,6 +10,7 @@ spec:
   prune: true
   dependsOn:
     - name: linkerd
+    - name: cert-manager
   sourceRef:
     kind: GitRepository
     name: rpi-infra
