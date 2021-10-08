@@ -25,8 +25,7 @@ spec:
   eventSeverity: info
   eventSources:
     - kind: Kustomization
-      name: rpi-apps
-      namespace: flux-system
+      name: '*'
 ---
 apiVersion: notification.toolkit.fluxcd.io/v1beta1
 kind: Alert
@@ -39,5 +38,4 @@ spec:
   eventSeverity: info
   eventSources:
     - kind: Kustomization
-      name: rpi-infra
-      namespace: flux-system
+      name: '*'

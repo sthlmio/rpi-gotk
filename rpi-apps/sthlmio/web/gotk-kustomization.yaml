@@ -1,0 +1,22 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: sthlmio-web
+  namespace: flux-system
+spec:
+  interval: 6h
+  dependsOn:
+    - name: cert-manager
+    - name: sealed-secrets
+  path: ./sthlmio/web
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: rpi-apps
+  validation: client
+  healthChecks:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: web
+      namespace: sthlmio

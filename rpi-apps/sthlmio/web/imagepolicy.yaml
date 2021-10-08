@@ -1,0 +1,24 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: sthlmio-web
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: sthlmio-web
+  policy:
+    semver:
+      range: 1.0.x
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: sthlmio-faas-web-mail
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: sthlmio-faas-web-mail
+  policy:
+    semver:
+      range: 1.0.x

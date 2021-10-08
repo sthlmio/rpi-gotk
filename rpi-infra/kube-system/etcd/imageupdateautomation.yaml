@@ -1,0 +1,22 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
+kind: ImageUpdateAutomation
+metadata:
+  name: infra-etcd-update
+  namespace: flux-system
+spec:
+  interval: 5m
+  update:
+    path: ./kube-system/etcd
+    strategy: Setters
+  sourceRef:
+    kind: GitRepository
+    name: rpi-infra
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        name: fluxcdbot
+        email: fluxcdbot@users.noreply.github.com
