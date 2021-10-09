@@ -8,6 +8,7 @@ spec:
   interval: 1h
   path: ./longhorn
   prune: true
+  force: true
   dependsOn:
     - name: sealed-secrets
   sourceRef:
