@@ -5,7 +5,7 @@ metadata:
   name: sthlmio-web
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 1m
   image: sthlmio/web
 ---
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
@@ -14,5 +14,5 @@ metadata:
   name: sthlmio-faas-web-mail
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 1m
   image: sthlmio/faas-web-mail
