@@ -5,6 +5,7 @@ metadata:
   name: kube-state-metrics
   namespace: flux-system
 spec:
+  timeout: 5m0s
   interval: 1h
   path: ./kube-system/kube-state-metrics
   prune: true

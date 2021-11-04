@@ -5,6 +5,7 @@ metadata:
   name: sthlmio-web
   namespace: flux-system
 spec:
+  timeout: 5m0s
   interval: 6h
   dependsOn:
     - name: cert-manager

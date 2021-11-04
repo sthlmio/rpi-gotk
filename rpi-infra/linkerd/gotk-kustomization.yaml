@@ -5,6 +5,7 @@ metadata:
   name: linkerd
   namespace: flux-system
 spec:
+  timeout: 5m0s
   interval: 1h
   path: ./linkerd
   prune: true

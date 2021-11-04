@@ -5,6 +5,7 @@ metadata:
   name: etcd
   namespace: flux-system
 spec:
+  timeout: 5m0s
   interval: 1h
   path: ./kube-system/etcd
   prune: true

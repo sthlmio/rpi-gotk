@@ -5,6 +5,7 @@ metadata:
   name: metallb-system
   namespace: flux-system
 spec:
+  timeout: 5m0s
   interval: 1h
   path: ./metallb-system
   prune: true

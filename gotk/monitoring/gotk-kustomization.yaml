@@ -5,6 +5,13 @@ metadata:
   name: gotk-monitoring
   namespace: flux-system
 spec:
+  timeout: 5m0s
+  interval: 1h0m0s
+  path: ./manifests/monitoring
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: gotk-monitoring
   healthChecks:
   - kind: Deployment
     name: prometheus
@@ -12,10 +19,3 @@ spec:
   - kind: Deployment
     name: grafana
     namespace: flux-system
-  interval: 1h0m0s
-  path: ./manifests/monitoring
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: gotk-monitoring
-  timeout: 2m0s

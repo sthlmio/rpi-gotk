@@ -5,6 +5,7 @@ metadata:
   name: traefik
   namespace: flux-system
 spec:
+  timeout: 5m0s
   interval: 1h
   path: ./traefik
   prune: true
