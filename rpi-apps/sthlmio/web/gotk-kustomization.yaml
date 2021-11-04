@@ -7,6 +7,7 @@ metadata:
 spec:
   timeout: 5m0s
   interval: 6h
+  retryInterval: 10m
   dependsOn:
     - name: cert-manager
     - name: sealed-secrets
