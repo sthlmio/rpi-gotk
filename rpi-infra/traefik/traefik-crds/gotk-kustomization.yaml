@@ -1,0 +1,17 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: traefik-crd
+  namespace: flux-system
+spec:
+  timeout: 5m0s
+  interval: 1h
+  path: ./traefik-crd
+  prune: true
+  dependsOn:
+    - name: traefik
+  sourceRef:
+    kind: GitRepository
+    name: rpi-infra
+  validation: client
