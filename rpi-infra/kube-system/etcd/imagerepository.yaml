@@ -1,9 +1,0 @@
----
-apiVersion: image.toolkit.fluxcd.io/v1alpha1
-kind: ImageRepository
-metadata:
-  name: sthlmio-go-gs-backup
-  namespace: flux-system
-spec:
-  interval: 5m
-  image: sthlmio/go-gs-backup
