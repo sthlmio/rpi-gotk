@@ -5,7 +5,7 @@ metadata:
   name: openfaas
   namespace: flux-system
 spec:
-  timeout: 5m0s
+  timeout: 30s
   interval: 1h
   path: ./openfaas
   prune: true
