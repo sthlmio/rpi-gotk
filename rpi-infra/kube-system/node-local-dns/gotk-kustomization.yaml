@@ -13,8 +13,3 @@ spec:
     kind: GitRepository
     name: rpi-infra
   validation: client
-  healthChecks:
-    - apiVersion: apps/v1
-      kind: DaemonSet
-      name: node-local-dns
-      namespace: kube-system
