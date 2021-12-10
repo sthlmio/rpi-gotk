@@ -2,23 +2,16 @@
 
 GitOps repo for Flux v2 running on our Raspberry Pi Kubernetes cluster.
 
-## Bootstrap/upgrade (idempotent)
+## Hardware (cluster)
 
-```bash
-brew upgrade fluxcd/tap/flux
+Raspberry Pi cluster containing of:
 
-flux bootstrap github \
-  --owner=sthlmio \
-  --repository=rpi-gotk \
-  --branch=main \
-  --path=/ \
-  --components-extra=image-reflector-controller,image-automation-controller
-```
+- Raspberry Pi 4 8 GB nodes
+- 1 master node and 5 worker nodes
+- PoE+ HAT on each node for power and network
+- SSD disk attached to each node
+- Ubiquiti UniFi USG and MetalLB as load-balancer
 
-## Monitoring
+## Documentation
 
-http://127.0.0.1:3000/
-
-```bash
-kubectl -n flux-system port-forward svc/grafana 3000:3000
-```
+See [DOCUMENTATION.md](./DOCUMENTATION.md) for docs.
