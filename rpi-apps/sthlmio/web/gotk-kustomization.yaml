@@ -12,6 +12,7 @@ spec:
     - name: cert-manager
     - name: sealed-secrets
     - name: openfaas
+    - name: contour
   path: ./sthlmio/web
   prune: true
   sourceRef:
