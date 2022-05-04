@@ -14,12 +14,12 @@ Raspberry Pi cluster containing of:
 
 | NAME | ROLES                     | VERSION      |
 | ---- | ------------------------- | ------------ |
-| rp0  | control-plane,etcd,master | v1.23.3+k3s1 |
-| rp1  | control-plane,etcd,master | v1.23.3+k3s1 |
-| rp2  | control-plane,etcd,master | v1.23.3+k3s1 |
-| rp3  | worker                    | v1.23.3+k3s1 |
-| rp4  | worker                    | v1.23.3+k3s1 |
-| rp5  | worker                    | v1.23.3+k3s1 |
+| rp0  | control-plane,etcd,master | v1.23.6+k3s1 |
+| rp1  | control-plane,etcd,master | v1.23.6+k3s1 |
+| rp2  | control-plane,etcd,master | v1.23.6+k3s1 |
+| rp3  | worker                    | v1.23.6+k3s1 |
+| rp4  | worker                    | v1.23.6+k3s1 |
+| rp5  | worker                    | v1.23.6+k3s1 |
 
 ## Documentation
 
